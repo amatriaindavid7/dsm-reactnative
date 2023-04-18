@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import Constants from 'expo-constants';
 import Calendario from './CalendarioComponent';
 import DetalleExcursion from './DetalleExcursionComponent';
+import Contacto from './ContactoComponent';
 import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './HomeComponent';
+import QuienesSomos from './QuienesSomosComponent';
 
 
 const Stack = createNativeStackNavigator();
@@ -74,8 +76,20 @@ function DrawerNavegador() {
         },
       }}
     >
-      <Drawer.Screen name="Home" component={HomeNavegador} />
+      <Drawer.Screen name="Campobase" component={HomeNavegador} />
       <Drawer.Screen name="Calendario" component={CalendarioNavegador} />
+      <Drawer.Screen name="Contacto" component={Contacto} options={{
+        headerShown: true, 
+        headerTintColor: '#fff',
+        headerStyle: { backgroundColor: '#015afc' },
+        headerTitleStyle: { color: '#fff' },
+      }} />
+      <Drawer.Screen name="Quienes somos" component={QuienesSomos} options={{
+        headerShown: true, 
+        headerTintColor: '#fff',
+        headerStyle: { backgroundColor: '#015afc' },
+        headerTitleStyle: { color: '#fff' },
+      }} />
     </Drawer.Navigator>
   );
 }
