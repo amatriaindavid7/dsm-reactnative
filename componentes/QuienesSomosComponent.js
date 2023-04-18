@@ -5,6 +5,7 @@ import { Card } from '@rneui/themed';
 import { EXCURSIONES } from '../comun/excursiones';
 import { CABECERAS } from '../comun/cabeceras';
 import { ACTIVIDADES } from '../comun/actividades';
+import { baseUrl } from '../comun/comun';
 
 function Historia(props) {
     return (
@@ -49,7 +50,7 @@ class QuienesSomos extends Component {
                 <ListItem
                     key={index}
                     bottomDivider>
-                    <Avatar source={require('./imagenes/40Años.png')} />
+                    <Avatar source={{uri: baseUrl + item.imagen}} />
                     <ListItem.Content>
                         <Card.Divider />
                         <ListItem.Title>{item.nombre}</ListItem.Title>

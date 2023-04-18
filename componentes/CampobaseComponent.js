@@ -12,6 +12,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '
 import Home from './HomeComponent';
 import QuienesSomos from './QuienesSomosComponent';
 import { DrawerActions } from '@react-navigation/native';
+import { colorGaztaroaOscuro, colorGaztaroaClaro } from '../comun/comun';
 
 
 const Stack = createNativeStackNavigator();
@@ -44,7 +45,7 @@ function HomeNavegador({ navigation }) {
       headerMode="float"
       screenOptions={{
         headerTintColor: '#fff',
-        headerStyle: { backgroundColor: '#015afc' },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: '#fff' },
         headerLeft: () =>
           (<Icon name="menu" size={28} color='white' onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />),
@@ -71,7 +72,7 @@ function CalendarioNavegador({ navigation }) {
       headerMode="float"
       screenOptions={{
         headerTintColor: '#fff',
-        headerStyle: { backgroundColor: '#015afc' },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: '#fff' },
         headerLeft: () =>
           (<Icon name="menu" size={28} color='white' onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} />),
@@ -103,7 +104,7 @@ function DrawerNavegador() {
       screenOptions={{
         headerShown: false,
         drawerStyle: {
-          backgroundColor: '#c2d3da',
+          backgroundColor: colorGaztaroaClaro,
         },
       }}
     >
@@ -133,7 +134,7 @@ function DrawerNavegador() {
       <Drawer.Screen name="Contacto" component={Contacto} options={{
         headerShown: true,
         headerTintColor: '#fff',
-        headerStyle: { backgroundColor: '#015afc' },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: '#fff' },
         drawerIcon: ({ tintColor }) => (
           <Icon
@@ -147,7 +148,7 @@ function DrawerNavegador() {
       <Drawer.Screen name="Quienes somos" component={QuienesSomos} options={{
         headerShown: true,
         headerTintColor: '#fff',
-        headerStyle: { backgroundColor: '#015afc' },
+        headerStyle: { backgroundColor: colorGaztaroaOscuro },
         headerTitleStyle: { color: '#fff' },
         drawerIcon: ({ tintColor }) => (
           <Icon
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   drawerHeader: {
-    backgroundColor: '#015afc',
+    backgroundColor: colorGaztaroaOscuro,
     height: 100,
     alignItems: 'center',
     justifyContent: 'center',

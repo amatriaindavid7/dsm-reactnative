@@ -4,6 +4,7 @@ import { Card, Icon, ListItem } from '@rneui/themed';
 import { EXCURSIONES } from '../comun/excursiones';
 import { COMENTARIOS } from '../comun/comentarios';
 import { FlatList } from 'react-native-gesture-handler';
+import { baseUrl } from '../comun/comun';
 
 const renderComentarioItem = ({ item, index }) => {
     return (
@@ -46,7 +47,7 @@ function RenderExcursion(props) {
             <Card>
                 <Card.Title>{excursion.nombre}</Card.Title>
                 <Card.Divider />
-                <Card.Image source={require('./imagenes/40Años.png')}></Card.Image>
+                <Card.Image source={{uri: baseUrl + excursion.imagen}}></Card.Image>
                 <Text style={{ margin: 20 }}>
                     {excursion.descripcion}
                 </Text>

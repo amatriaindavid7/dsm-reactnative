@@ -4,6 +4,7 @@ import { Card } from '@rneui/themed';
 import { EXCURSIONES } from '../comun/excursiones';
 import { CABECERAS } from '../comun/cabeceras';
 import { ACTIVIDADES } from '../comun/actividades';
+import { baseUrl } from '../comun/comun';
 
 function RenderItem(props) {
 
@@ -25,7 +26,7 @@ function RenderItem(props) {
                 }}>
                     {item.nombre}
                 </Text>
-                <Card.Image source={require('./imagenes/40Años.png')}></Card.Image>
+                <Card.Image source={{uri: baseUrl + item.imagen}}></Card.Image>
                 <Text style={{ margin: 20 }}>
                     {item.descripcion}
                 </Text>
