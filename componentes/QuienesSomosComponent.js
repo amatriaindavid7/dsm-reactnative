@@ -4,7 +4,7 @@ import { ListItem, Avatar } from '@rneui/themed';
 import { Card } from '@rneui/themed';
 import { EXCURSIONES } from '../comun/excursiones';
 import { CABECERAS } from '../comun/cabeceras';
-import { ACTIVIDADES } from '../comun/actividades';
+import { connect } from 'react-redux';
 import { baseUrl } from '../comun/comun';
 
 function Historia(props) {
@@ -34,14 +34,14 @@ function Historia(props) {
 
 }
 
-class QuienesSomos extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            actividades: ACTIVIDADES
-        };
+const mapStateToProps = state => {
+    return {
+        actividades: state.actividades
     }
+}
+
+
+class QuienesSomos extends Component {
 
     render() {
 
@@ -50,7 +50,7 @@ class QuienesSomos extends Component {
                 <ListItem
                     key={index}
                     bottomDivider>
-                    <Avatar source={{uri: baseUrl + item.imagen}} />
+                    <Avatar source={{ uri: baseUrl + item.imagen }} />
                     <ListItem.Content>
                         <Card.Divider />
                         <ListItem.Title>{item.nombre}</ListItem.Title>
@@ -68,7 +68,7 @@ class QuienesSomos extends Component {
                         "Actividades y recursos"
                     </Card.Title>
                     <FlatList
-                        data={this.state.actividades}
+                        data={this.props.actividades.actividades}
                         renderItem={renderActividadItem}
                         keyExtractor={item => item.id.toString()}
                     />
@@ -78,4 +78,4 @@ class QuienesSomos extends Component {
     }
 }
 
-export default QuienesSomos;
+export default connect(mapStateToProps)(QuienesSomos);
